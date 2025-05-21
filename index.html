@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-Tech Online Electronics Store</title>
+    <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/1293392486949195797/1374071560645771304/Screenshot_2025-05-20_010912-removebg-preview.png?ex=682cb75d&is=682b65dd&hm=ecf77cdf4852bd5c0c003f89a0c98334bf6109f0ab3bbe5891b9d3e281feb953&">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>
+        <!-- login -->
+<div id="authModal" class="modal-overlay">
+  <div class="modal-content">
+    <h2>Login Required</h2>
+    <input id="username" type="text" placeholder="Username" class="modal-input"><br>
+    <input id="password" type="password" placeholder="Password" class="modal-input"><br>
+    <div class="modal-btn-row">
+      <button onclick="login()" class="btn modal-btn">Login</button>
+      <button onclick="signup()" class="btn modal-btn">Sign Up</button>
+    </div>
+    <button onclick="closeModal()" class="btn modal-close-btn">Close</button>
+    <div id="authMsg" class="modal-msg"></div>
+  </div>
+</div>
+    <!-- nav -->
+    <nav class="navbar">
+        <div class="logo">
+    <img src="https://cdn.discordapp.com/attachments/1293392486949195797/1374071560645771304/Screenshot_2025-05-20_010912-removebg-preview.png?ex=682cb75d&is=682b65dd&hm=ecf77cdf4852bd5c0c003f89a0c98334bf6109f0ab3bbe5891b9d3e281feb953&" alt="I-Tech Logo" style="height:40px;">
+        </div>
+    <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#cart">Cart</a>
+            <a href="#orderHistory" id="orderHistoryLink">Order History</a>
+        </div>
+       <button class="btn" id="loginBtn" onclick="document.getElementById('authModal').style.display='flex'">Login | Sign Up</button>
+<span id="userDisplay" style="margin-left:1rem; font-weight:bold; color:var(--primary-green); display:none;"></span>
+    </nav>
+
+    <section class="hero" id="home">
+    <h1>I-Tech Online Electronics Store</h1>
+    <p>An online store where you can easily browse, shop, and buy quality gadgets and tech accessories.</p>
+    </section>
+
+    <section class="products" id="products">
+         <h2 class="section-title">Our Products</h2>
+         <div class="product-grid">
+
+          <!-- product-card -->
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1293392486949195797/1374079467571646515/The_Leading_Brand_in_High-end_Gaming__Professional_Creation.jpg?ex=682cbeba&is=682b6d3a&hm=1f0f4e71c6f306d4f9b1a64785977625e999d9472cd4eb82246dae7a73be1d3a&=&format=webp&width=466&height=373" alt="Product" class="product-image">
+            <h3>MISI Motherboard</h3>
+            <p class="product-price">₱7,621</p>
+            <p>Hign Quality main circuit board that connects all computer components.</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1293392486949195797/1374068398807449721/webcam.jpg?ex=682cb46b&is=682b62eb&hm=90a3fd3efffdd082cb7b32efb8e0dacd18703b9485a0cd1e3e2eea846467a5d8&=&format=webp&width=584&height=642" alt="Product" class="product-image">
+            <h3>Wibcam with Microphone</h3>
+            <p class="product-price">₱544</p>
+            <p>Camera used for video calls and good for OMI TV.</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1293392486949195797/1374080745739391056/What_we_love_-_Take_your_music_anywhere_with_this....jpg?ex=682cbfea&is=682b6e6a&hm=67266d02213a4752c141cc5895bf483e69799179fd6afb5253215d10f1528f90&=&format=webp&width=466&height=413" alt="Product" class="product-image">
+            <h3>JVT Speaker</h3>
+            <p class="product-price">₱6,749</p>
+            <p>Portable speaker known for strong bass and clear sound.</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1293392486949195797/1374078109837693068/nokio.jpg?ex=682cbd76&is=682b6bf6&hm=9102aad0c351fe66777c72e9013cbf94bef3b150a46483044a721a71cbde3eaf&=&format=webp&width=466&height=466" alt="Product" class="product-image">
+            <h3>Nokiyah</h3>
+            <p class="product-price">₱7,500</p>
+            <p>Durable phones known for long battery life and reliability.</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1293392486949195797/1374077947039977512/headphone.jpg?ex=682cbd4f&is=682b6bcf&hm=b9c103a808332723dcf8b3e24f6eebe3b0d303c0aed68220f9614d7efdd06d3f&=&format=webp" alt="Product" class="product-image">
+            <h3>Gaming Headset</h3>
+            <p class="product-price">₱869</p>
+            <p>Good for personal listening with clear sound and noise isolation.</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1293392486949195797/1374069149159919656/hard_drive.jpg?ex=682cb51e&is=682b639e&hm=7eac54484353374b73672046948f59097c3691211a8273549735a91753aea02f&=&format=webp" alt="Product" class="product-image">
+            <h3>Original Hard Drive</h3>
+            <p class="product-price">₱1,369</p>
+            <p>Storage device for saving files, photos, and software.</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1293392486949195797/1374077982116675807/mic.jpg?ex=682cbd58&is=682b6bd8&hm=e30d610d4cb7f367ac5efa51a3e8d23fef7c964af3eed9dda0cf3c90b9e11f30&=&format=webp&width=466&height=466" alt="Product" class="product-image">
+            <h3>Streaming Microphone</h3>
+            <p class="product-price">₱7,621</p>
+            <p>Clean software, slight back cover fade.</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1293392486949195797/1374078018410250341/ipone.jpg?ex=682cbd60&is=682b6be0&hm=717b092ab0adb245a53f226527813ff267b4ab829090637d62ee3a7eaee5c1cb&=&format=webp&width=466&height=466" alt="Product" class="product-image">
+            <h3>ePhone 15 Pro Max</h3>
+            <p class="product-price">₱38,690</p>
+            <p>Apple’s smartphone known for its sleek design and iOS system.</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1293392486949195797/1374078056569765960/sumsang.jpg?ex=682cbd69&is=682b6be9&hm=b55d1129c453d5631ead370d4a4c6ef65ca5d04006e685b9d1ee8f020d9bd4c9&=&format=webp&width=466&height=466" alt="Product" class="product-image">
+            <h3>Sangsung Galaxy Note 10</h3>
+            <p class="product-price">₱18,588</p>
+            <p>Popular brand offering Android phones with advanced features.</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1293392486949195797/1374068874907091014/tablit.jpg?ex=682cb4dc&is=682b635c&hm=12b404325fd43daede69c93e0cceeaf25239ec1dc3d1e85f67005f9a797a655f&=&format=webp&width=466&height=466" alt="Product" class="product-image">
+            <h3>Study Tablet</h3>
+            <p class="product-price">₱2,718</p>
+            <p>Larger than a phone, used for browsing and study.</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1293392486949195797/1374069077949153290/flash_drive.jpg?ex=682cb50d&is=682b638d&hm=58da62c7c1c32dfc211e1782db62281a7e55d7534a1a006aa7a9d9d5b2787fce&=&format=webp&width=466&height=466" alt="Product" class="product-image">
+            <h3>Sundisk Plashdrive</h3>
+            <p class="product-price">₱233</p>
+            <p>Portable USB storage for transferring files easily.</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1293392486949195797/1374069110677438635/mouse.jpg?ex=682cb514&is=682b6394&hm=b67ad99f0314dad69696c68d93b740fea77f007a4642e3a7819435aabcfe79cc&=&format=webp&width=466&height=466" alt="Product" class="product-image">
+            <h3>GBT Gaming Mouse</h3>
+            <p class="product-price">₱648</p>
+            <p>A nice gaming mouse that is suitable for Valorant</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div id="cartModal" class="modal-overlay">
+  <div class="modal-content">
+    <h2>Your Cart</h2>
+    <ul id="cartItems" class="modal-list"></ul>
+    <button onclick="closeCart()" class="btn modal-close-btn">Close</button>
+  </div>
+</div>
+    </section>
+
+    <!-- footer -->
+    <footer id="contact">
+    <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Email: eugenkatutero@hotmail.com</p>
+        <p>Phone: (63) 123-4567</p>
+    </div>
+    <div class="footer-section">
+        <h3><a href="#" id="aboutUsFooterLink">About Us</a></h3>
+    </div>
+    <div class="footer-section" style="text-align:center; width:100%;">
+        <span style="color:#ffffff;">&copy; 2025 I-Tech Online Electronics Store</span>
+    </div>
+</footer>
+
+<!-- notif popup  -->
+<div id="notification"></div>
+
+<!-- order history -->
+<div id="orderHistoryModal" class="modal-overlay">
+  <div class="modal-content">
+    <h2>Your Order History</h2>
+    <ul id="orderHistoryList" class="modal-list"></ul>
+    <button onclick="closeOrderHistory()" class="btn modal-close-btn">Close</button>
+  </div>
+</div>
+
+<!-- about us-->
+<div id="aboutUsModal" class="modal-overlay">
+  <div class="modal-content" style="max-width: 400px;">
+    <h2>About Us</h2>
+    <p style="margin-bottom:1rem;">
+      <strong>I-Tech Online Electronics Store</strong> is a school project and online electronics store designed to make shopping for gadgets and tech accessories easy. Our system allows users to browse, add to cart, and purchase products with a smooth and user-friendly experience.
+    </p>
+    <div style="margin-bottom:1rem;">
+      <h3 style="margin-bottom:0.5rem;">The Developers</h3>
+      <ul style="list-style:none; padding:0;">
+        <li style="margin-bottom:0.5rem;">
+          <strong>TJ</strong><br>
+          <span style="font-size:0.95em; color:#555;">Frontend Developer/Designer <br> Backend Developer</span>
+        </li>
+        <li>
+          <strong>Eugene</strong><br>
+          <span style="font-size:0.95em; color:#555;">Frontend Developer <br> Backend Developer</span>
+        </li>
+      </ul>
+    </div>
+    <button onclick="closeAboutUs()" class="btn modal-close-btn">Close</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
